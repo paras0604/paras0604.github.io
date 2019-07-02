@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .media {
+            margin-top: 10%;
+        }
+
+        h2 {
+            color: royalblue;
+            text-transform: capitalize;
+
+        }
+
+        input[type=text],
+        input[type=number] {
+            padding: 10px;
+            margin-left: 10%;
+            margin-right: 10%;
+            display: block;
+            width: 30%;
+            border-top: 3px;
+            cursor: text;
+        }
+
+        .btn {
+            margin: 1%;
+            width: 30%;
+            height: 30px;
+            background-color: royalblue;
+            color: white;
+
+        }
+
+        .btn:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+        .media1{
+            padding: 10px;
+            margin-left: 10%;
+            margin-right: 10%;
+            display: block;
+            width: 30%;
+            border-top: 3px;
+            cursor: text;
+        }
+
+        @media only screen and (max-width:600px) {
+            .media form {
+                width: 90%;
+                margin: 1%;
+            }
+
+            .media1,
+            input[type=text] {
+                width: 90%;
+            }
+
+            .media1,
+            input[type=number] {
+                width: 90%;
+            }
+            .media1,
+            input[type=email]{
+                width:90%;
+            }
+
+            .btn {
+                width: 90%;
+            }
+        }
+    </style>
+   
+
+   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+   <script>
+       // Initialize Firebase
+       var config = {
+           apiKey: "AIzaSyA4XTEmRk1NbZC_CcaramQvBHfvP6P4Wlc",
+           authDomain: "dwarf-ab412.firebaseapp.com",
+           databaseURL: "https://dwarf-ab412.firebaseio.com",
+           projectId: "dwarf-ab412",
+           storageBucket: "dwarf-ab412.appspot.com",
+           messagingSenderId: "415337183169"
+       };
+       firebase.initializeApp(config);
+   </script>
+   
+
+   
+
+   
+</head>
+
+<body>
+    <center>
+        <div class="media">
+        
+                <h2 id="names"></h2>
+                <input type="text" placeholder="Enter your name here..." id="name" required class="media1"><br>
+                <input type="number" placeholder="Your contact number..." id="number" required class="media1"><br>
+                <input type="email" placeholder=" Your E-Mail Id" id="email" required class="media1"><br>
+                <button class="btn" onclick="alrt();" class="media1">BOOK NOW</button>
+                <h2 id="price1"></h2>
+        
+        </div>
+    </center>
+</body>
+<script>
+
+        var params = (new URL(document.location)).searchParams;
+        var item = params.get("item");
+        var price;
+        var names = document.getElementById("names");
+        names.innerHTML = item;
+        switch (item) {
+            case 'IRON 1200': price = 2000;
+                break;
+            case 'STREET FIGHTER': price = 2500;
+                break;
+            case 'street triple': price = 1500;
+                break;
+            case 'Speed twin': price = 2000;
+                break;
+            case 'RC 200': price = 750;
+                break;
+            case 'RC 290': price = 900;
+                break;
+            case 'scrambler': price = 1350;
+                break;
+            case 'Desert sled': price = 1750;
+                break;
+            case 'G 310 R' : price = 1350;
+                break;
+            case 'R NINET racer' : price = 1750;
+                break;
+            case '302 R' : price = 1500;
+                break;
+            case 'TNT 600 GT' : price = 2000;
+                break;
+            case 'Classic 350' : price = 750;
+                break;
+            case 'Himalayan' : price = 1000;
+                break;
+            case 'CBR250R Honda' : price = 750;
+                break;
+            case 'CB 300R Honda' : price = 950;
+                break;
+            case 'X Pulse 200 T' : price = 750;
+                break;
+            case 'Karizma ZMR' : price = 900;
+                break;
+            case 'Pulsar 220 F' : price = 750;
+                break;
+            case 'Pulsar 200' : price = 750;
+                break;
+        }
+        document.getElementById('price1').innerHTML = "The Rent For 1 hour is: " + price;
+    
+    
+       
+    </script>
+
+<script>
+        function alrt() {
+    
+    
+    var Name = document.getElementById("name").value;
+    var contact = document.getElementById("number").value;
+    var gmail = document.getElementById("email").value;
+    var date = new Date();
+    var utcDate = date.toUTCString();
+
+    //data storage in firebase
+    firebase.database().ref('users/').push({
+
+    Fullname: Name,
+    Number: contact,
+    Email: gmail,
+    Bike: item,
+    Price: price,
+    time_stamp: utcDate
+        
+
+    });
+
+
+    var a = document.getElementById("name").value;
+    alert("your most welcome " + a + "\nyour Bike has been Booked \nThank You For Booking");
+
+
+}
+
+</script>
+
+    
+</html>

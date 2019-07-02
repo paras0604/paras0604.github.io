@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bike Rental Dashboard</title>
+    
+</head>
+
+<body>
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA4XTEmRk1NbZC_CcaramQvBHfvP6P4Wlc",
+                authDomain: "dwarf-ab412.firebaseapp.com",
+                databaseURL: "https://dwarf-ab412.firebaseio.com",
+                projectId: "dwarf-ab412",
+                storageBucket: "dwarf-ab412.appspot.com",
+                messagingSenderId: "415337183169"
+            };
+            firebase.initializeApp(config);
+        </script>
+    <script>
+        firebase.database().ref('users/').once('value').then(function (snapshot) {
+            console.log(snapshot.val());
+            var data = snapshot.val();
+            var ordrId;
+            var i=0;
+            for (ordrId in data) {
+                i++;
+                document.getElementById("tbody").innerHTML += '<tr><th scope="row">' + i + '</th><td></t><td></td><td></td><td></td><td></td><td></td></tr>';
+                var name = data[ordrId]["Fullname"];
+                var number = data[ordrId]["Number"];
+                var hmail = data[ordrId]["Email"];
+                var item = data[ordrId]["Bike"];
+                var cost = data[ordrId]["Price"];
+                var time = data[ordrId]["time_stamp"];
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(1)").innerHTML = name; 
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(2)").innerHTML = number; 
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(3)").innerHTML = hmail; 
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(4)").innerHTML = item; 
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(5)").innerHTML = cost; 
+                document.querySelector("#tbody tr:last-of-type td:nth-of-type(6)").innerHTML = time; 
+                
+            }
+        });
+    </script>
+    <center><h1>DASHBOARD</h1></center><hr>
+    <br><br>
+    <table class="table table-dark">
+            <thead>
+              <tr>
+                  <th scope="col">S.No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Number</th>
+                <th scope="col">Email</th>
+                
+                <th scope="col">Bike</th>
+                <th scope="col">Price</th>
+                <th scope="col">Time</th>
+
+                
+              </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+          </table>
+</body>
+
+</html>

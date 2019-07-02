@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>
+        Rent Bikes
+    </title>
+    <style>
+        .menu {
+            width: 2%;
+            height: 20px;
+            background-color: black;
+            position: fixed;
+        }
+
+        nav {
+            color: white;
+        }
+
+        #heading {
+            position: relative;
+            width: fit-content;
+            left: 15px;
+            top: 20px;
+            font-size: 30px;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        #heading2 {
+            position: absolute;
+            right: 15px;
+            top: 25px;
+        }
+
+        #heading2 a {
+            padding: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        #link1:hover,
+        #link2:hover {
+            color: green;
+        }
+
+        .backgr2 {
+            position: fixed;
+            width: 100vw;
+            z-index: -10;
+            height: 65vh;
+
+        }
+
+        #form {
+            width: 30%;
+            height: 70px;
+            margin-bottom: 1%;
+            border-radius: 3%;
+        }
+
+        #form2 {
+            width: 63%;
+            height: 70px;
+            border-radius: 7%;
+        }
+
+        #form3 {
+            width: 200px;
+            height: 70px;
+            position: absolute;
+            top: calc(75vh - 35px);
+            left: calc(50vw - 100px);
+            border-radius: 7%;
+        }
+
+        #form3:hover {
+            color: white;
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        #above {
+            margin-bottom: 1%;
+            font-size: 19px;
+            color: white;
+        }
+
+        #side {
+            color: white;
+            font-size: 19px;
+            width: 75vw;
+            margin-left: 12.5vw;
+            text-align: center;
+        }
+
+        #side div {
+            float: left;
+            width: 50%;
+        }
+
+        .background {
+            background-color: white;
+            background-size: cover;
+            color: black;
+            text-align: left;
+            opacity: 0.8;
+            font-size: 20px;
+            padding: 10px;
+            border-top-right-radius: 1%;
+            border-top-left-radius: 1%;
+            margin: 1%;
+            margin-top: 40px;
+        }
+
+        .background2 {
+            background-image: url("images/homebackground.png");
+            margin-top: 0%;
+            background-size: cover;
+            opacity: 0.9;
+            height: 75vh;
+
+        }
+
+        .refer {
+            background-color: rgb(34, 33, 33);
+            margin-top: -10px;
+            margin-right: -0.7%;
+            margin-left: -0.7%;
+            font-weight: 900;
+            color: white;
+
+        }
+
+        .offers {
+            background-color: gainsboro;
+            text-align: center;
+        }
+
+        .offers2 {
+            background-color: gainsboro;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #gallery {
+            width: 80vw;
+            margin-left: 10vw;
+        }
+
+        #gallery2 {
+            text-align: center;
+            width: calc(100vw - 20px);
+            margin-left: 10px;
+        }
+
+        .image {
+            background-color: white;
+            width: 32%;
+            height: 200px;
+            display: inline-table;
+            margin-bottom: 6px;
+        }
+
+        .image img {
+            margin-left: 0 !important;
+        }
+
+        .image2 {
+            background-color: white;
+            width: 19%;
+            height: 200px;
+            display: inline-table;
+            margin-bottom: 20px;
+        }
+
+        .image3 {
+            background-color: white;
+            width: 25%;
+            display: inline-table;
+            height: 215px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .image3 img {
+            height: 120px !important;
+            margin-left: 0 !important;
+        }
+
+        .image3 p {
+            margin-left: 0 !important;
+            text-align: center !important;
+            padding-left: 0 !important;
+        }
+
+        .image4 {
+            background-color: white;
+            width: 23%;
+            display: inline-table;
+            height: 200px;
+            margin-left: 15%;
+        }
+
+        .image5 {
+            background-color: white;
+            width: 23%;
+            display: inline-table;
+            height: 200px;
+        }
+
+        .image6 {
+            background-color: white;
+            width: 23%;
+            display: inline-table;
+            height: 200px;
+        }
+
+        .image7 {
+            background-color: white;
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+            margin-left: 3%;
+            margin-right: 1%;
+        }
+
+        .image8 {
+            background-color: white;
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+            margin-right: 1%;
+        }
+
+        .image9 {
+            background-color: white;
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+            margin-right: 1%;
+        }
+
+        .image10 {
+            background-color: white;
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+            margin-right: 1%;
+        }
+
+        .image11 {
+            background-color: white;
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+        }
+
+        .image12 {
+            width: 18%;
+            display: inline-table;
+            height: 200px;
+            margin-left: 0%;
+        }
+
+        .image13 {
+            width: 20%;
+            display: inline-table;
+            height: 200px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 40px;
+            color: black;
+            background-color: lightgrey;
+            margin-top: 3%;
+            border: 1px solid green;
+            border-radius: 5%;
+        }
+
+        .btn:hover {
+            background-color: grey;
+            cursor: pointer;
+            color: white;
+        }
+
+        .bookbike {
+            background-image: url("images/bikebook.jpg");
+            height: 500px;
+            margin-top: 1%;
+            width: 100%;
+            opacity: 0.7;
+            background-size: cover;
+            background-position-x: center;
+        }
+
+        .bikers {
+            background-image: url(images/bikers.png);
+            width: 100%;
+            opacity: 0.8;
+            padding-bottom: 30px;
+            background-size: cover;
+        }
+
+        .bikers h1 {
+            font-size: 200px;
+            text-align: center;
+            padding-top: 5%;
+            color: green;
+            margin: 0;
+        }
+
+        .bikers p:first-of-type {
+            color: rgb(84, 172, 33);
+            text-align: center;
+            font-size: 23px !important;
+            margin-top: -10%;
+            width: fit-content !important;
+            padding-left: 40px !important;
+            padding-right: 40px;
+            font-weight: 700;
+        }
+
+        .newspaper {
+            background-color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: gray;
+            width: 100%;
+            padding: 30px 0;
+        }
+
+        .footer1 {
+            text-align: center;
+            background-color: rgb(80, 73, 73);
+            padding: 30px 10px;
+        }
+
+        .image14 {
+            display: inline-table;
+            width: 23% !important;
+            margin-left: 0 !important;
+            margin-bottom: 20px;
+            padding: 0 5px;
+        }
+
+        .image15 {
+            display: inline-table;
+            width: 49%;
+            margin-left: 0 !important;
+        }
+
+        .image15:hover {
+            background-color: black;
+
+        }
+
+        .city {
+            width: 20%;
+            color: white;
+            line-height: 2;
+            display: inline-table;
+        }
+
+        .city2 {
+            width: 20%;
+            color: white;
+            line-height: 2;
+            display: inline-table;
+        }
+
+        .touch {
+            color: white;
+        }
+
+        .red {
+            color: white;
+            margin-right: 2%;
+        }
+
+        .red:hover {
+            color: black;
+        }
+
+        .book {
+            color: white;
+            margin-right: 2%;
+        }
+
+        .book:hover {
+            color: black;
+        }
+
+        .inked {
+            color: white;
+            margin-right: 2%;
+        }
+
+        .inked:hover {
+            color: black;
+        }
+
+        .googlemail {
+            color: white;
+            margin-right: 2%;
+        }
+
+        .googlemail:hover {
+            color: black;
+        }
+
+        .footer2 {
+            margin-left: 15%;
+            width: 80%;
+        }
+
+        .footer0 {
+            background-color: lightgray;
+            height: 500px;
+            margin-top: 0%;
+            padding-top: 5%;
+        }
+
+        .support {
+            margin-left: 15%;
+            padding-right: 40px;
+        }
+
+        .image2 img {
+            margin-left: 0 !important;
+        }
+
+        @media only screen and (max-width: 1024px) {
+
+            .image2 {
+                width: 28%;
+            }
+        }
+
+
+        @media only screen and (max-width: 973px) {
+
+            #gallery {
+                width: 90vw;
+                margin-left: 5vw;
+            }
+
+            .image {
+                width: 49%;
+            }
+
+            .image3 {
+                width: 33%;
+            }
+
+            .image14 {
+                width: 30%;
+            }
+
+            .support {
+                margin-left: 75px;
+                padding-right: 35px;
+            }
+
+        }
+
+        @media only screen and (max-width: 732px) {
+
+            #side div {
+                width: 100%;
+                float: none;
+            }
+
+            .image2 {
+                width: 35%;
+            }
+
+            .image3 {
+                width: 40%;
+            }
+
+            .image14 {
+                width: 40%;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            #gallery {
+                width: 95vw;
+                margin-left: 2.5vw;
+            }
+
+            .image {
+                width: 98%;
+            }
+
+            .image2 {
+                width: 45%;
+            }
+
+            .city {
+                width: 40px;
+            }
+
+            .support {
+                margin-left: 25px;
+                padding-right: 25px;
+            }
+
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            .image2 {
+                width: 85%;
+            }
+
+            .image3 {
+                width: 70%;
+            }
+
+            .image3 {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin-top: 0%;position:relative;background-color:lightgray;margin-left:0%">
+    <div class="background2">
+
+        <nav>
+            <div id="heading">
+                <div id="wheels">Wheels</div>
+                <div id="to-go">2GO</div>
+            </div>
+
+            <div id="heading2">
+                <a href="signin.html" id="link1">LOGIN</a>
+                <a href="signup.html" id="link2">SIGNUP</a>
+            </div>
+        </nav>
+
+        <!-- <div class="heading">
+            <br><br>
+            <i>
+                <h1 style="padding-top: 0%">Wheels</h1>
+            </i>
+            <i>
+                <h1>2GO</h1>
+            </i>
+            <div class="heading2">
+                <a href="signin.html" class="link1">LOGIN</a>
+                <a href="signup.html" class="link2">SIGNUP</a>
+
+            </div>
+        </div> -->
+
+        <form method="POST">
+            <center>
+                <p id="above"><b>Your City:</b></p>
+                <select id="form" name="search" style="font-size: 18px;">
+                    <option value="null">Search for your city...</option>
+                    <option value="jaipur">Jaipur</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="ajmer">Ajmer</option>
+                    <option value="Alwar">Alwar</option>
+
+                </select>
+            </center>
+
+            <div id="side">
+                <div>
+                    <p><b>Pick-up Date & Time:</b></p>
+                    <input type="datetime-local" name="Date&Time" id="form2">
+                </div>
+                <div>
+                    <p><b>Dropoff Date & Time</b></p>
+                    <input type="datetime-local" name="Date & Time" placeholder="Dropoff Time" id="form2">
+                </div>
+
+                <center>
+                    <div style="width: 100%">
+                        <a href="signin.html">
+                            <input type="button" value="Find Bikes" id="form3">
+                        </a>
+                    </div>
+                </center>
+            </div>
+        </form>
+
+
+    </div>
+    <div class="background">
+        <div class="refer">
+            REFER AND EARN
+            <hr>
+        </div>
+        <div class="styling">
+            <p>
+                <img src="./images/refer.png" style="float:left;width:12%;margin-top: -1%">
+                You earn 500 credits,your friend gets 30% (upto Rs. 2500) off on their first booking of at least 8
+                hours.
+            </p>
+        </div>
+    </div>
+    <div class="offers">
+        <h1 style="font-weight:100;padding-top:3%">THE WHEELS 2 GO ADVANTAGE</h1>
+        <p style="font-size:20px">We simplified bike rentals,so you can focus on what is important for you.</p>
+        <div id="gallery">
+            <span class="image">
+                <img src="images/fuel.jpg" style="height:90px;width:100px;margin-left:25%">
+                <p style="font-size:19px; color:teal;margin-top:0;text-align: center">Fuel Cost Included</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Don't worry about mileage!
+                    All
+                    fuel costs are included. If you refill fuel, we'll pay you back!</p>
+            </span>
+            <span class="image">
+                <img src="images/search.png" style="height:90px;width:80px;margin-left:25%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">No Hidden Charges</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Our prices include taxes and
+                    insurance.
+                    What you see is what you really pay!</p>
+            </span>
+            <span class="image">
+                <img src="images/package.png" style="height:90px;width:80px;margin-left:30%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">Flexi Pricing Packages</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">One size never fits all!
+                    Choose
+                    a balance of time and kilometers that works best for you.</p>
+            </span>
+            <span class="image">
+                <img src="images/gps.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">Go Anywhere</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Our bikes have all-India
+                    permits. Just remember to pay state tolls and entry taxes.</p>
+            </span>
+            <span class="image">
+                <img src="images/road.jpg" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">24x7 Roadside Assistance</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">We have round-the-clock, pan
+                    India partners. Help is never far away from you.</p>
+            </span>
+            <span class="image">
+                <img src="images/bike.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">Damage Insurance</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">All your bookings include
+                    damage
+                    insurance! Drive safe, but don’t worry!</p>
+            </span>
+        </div>
+        <center>
+            <h1 style="font-weight:100;padding-top:3%" id="working">
+                How Wheels 2 Go works
+            </h1>
+            <p style="font-size:20px">Drive yourself to an adventure and back in 5 simple steps</p>
+        </center>
+        <div id="gallery2">
+            <span class="image2">
+                <img src="images/bike.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">Book</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Search for and book a car on
+                    our
+                    site!</p>
+            </span>
+            <span class="image2">
+                <img src="images/license.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">Upload License</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Upload your driver’s
+                    license,
+                    and pay a small security deposit.</p>
+            </span>
+            <span class="image2">
+                <img src="images/lock.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">UNLOCK</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">We SMS your bike details 20
+                    minutes before pickup.Unlock it via the wheels2Go app.</p>
+            </span>
+            <span class="image2">
+                <img src="images/bike.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">WHEELS</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Fill the start checklist in
+                    the
+                    Zoomcar app. Grab the keys from the glove-box and drive.</p>
+            </span>
+            <span class="image2">
+                <img src="images/return.png" style="height:90px;width:80px;margin-left:33%">
+                <p style="font-size:19px;color: teal;margin-top:0;text-align:center">RETURN</p>
+                <p style="margin-left:2%;margin-right:2%;font-size:14px;text-align: center">Return the car to the same
+                    location and
+                    fill the end checklist to end your trip.</p>
+            </span>
+        </div>
+
+        <a href="signin.html"><button class="btn">LOGIN</button></a>
+    </div>
+    <div class="bookbike">
+        <h1 style="color:white;padding-top:20%;margin-left:15%">WHEELS ON THE GO!</h1>
+        <p style="font-size:18px;padding-left:15%;color:white;text-align:justify">Make a booking, unlock your car,</p>
+        <p style="font-size:18px;padding-left:15%;color:white;text-align:justify">and end your reservation all from our
+            website.</p>
+    </div>
+    <div class="offers2">
+        <span class="image3">
+            <img src="images/steering.svg" style="height:100px;width:90px;margin-left:13%">
+            <p style="font-size:25px;padding-left:20%;text-align:justify;margin-top:0%;margin-bottom:0%"><b>3000+</b>
+            </p>
+            <p style="font-size:18px;padding-left:13%;text-align:justify;">RIDES DAILY</p>
+        </span>
+        <span class="image3">
+            <img src="images/happy.svg" style="height:100px;width:90px;margin-left:16%">
+            <p style="font-size:25px;padding-left:18%;text-align:justify;margin-top:0%;margin-bottom:0%">
+                <b>4,80,000+</b></p>
+            <p style="font-size:18px;padding-left:0%;text-align:justify;">HAPPY CUSTOMERS</p>
+        </span>
+        <span class="image3">
+            <img src="images/kms.svg" style="height:100px;width:90px;margin-left:14%">
+            <p style="font-size:25px;padding-left:11%;text-align:justify;margin-top:0%;margin-bottom:0%">
+                <b>36,80,000+</b></p>
+            <p style="font-size:18px;padding-left:8%;text-align:justify;margin-bottom:0%">KM TRAVELLED</p>
+        </span>
+        <span class="image3">
+            <img src="images/bike.svg" style="height:100px;width:90px;margin-left:14%">
+            <p style="font-size:25px;padding-left:18%;text-align:justify;margin-top:0%;margin-bottom:0%"><b>2000+</b>
+            </p>
+            <p style="font-size:18px;padding-left:8%;text-align:justify;margin-bottom:0%">NUMBERS OF BIKES</p>
+        </span>
+        <span class="image3">
+            <img src="images/star_rating.svg" style="height:150px;width:150px;margin-left:14%">
+            <p style="font-size:25px;padding-left:15%;text-align:justify;margin-top:-3%;margin-bottom:0%"><b>RATING
+                    4.5/5.0</b></p>
+            <p style="font-size:18px;padding-left:8%;text-align:justify;margin-bottom:0%">Rated by 3,00,000+ customers
+
+                over 10,00,000+ bookings</p>
+        </span>
+    </div>
+    <div class="bikers">
+        <h1 style="font-size:200px;text-align:center;padding-top:5%;color:green">"</h1>
+        <br>
+        <br>
+        <p style="color:rgb(84, 172, 33);text-align:center;font-size:20px;margin-top:-10%;width:60%;padding-left:22%">At
+            the outset, let me thank you for introducing WHEELS 2 GO in Bangalore and for giving me an opportunity to
+            use your service. Your customer support was impeccable and vehicle was well-maintained and top-notch.
+
+        </p>
+        <p style="text-align:center;font-size:26px;width:60%;padding-left:22%;color:rgb(119, 236, 227)">- D.Samuel</p>
+    </div>
+    <div class="newspaper">
+        <div class="image14" style="width:20%;margin-left:10%">
+            <img src="images/dailynews.png"
+                style="height:200px;width:200px; margin-top:5%;margin-right:5%;margin-left:6%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/australian.png" style="height:200px;width:200px; margin-top:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/indianexpress.png" style="height:200px;width:200px; margin-top:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/toi.png" style="height:200px;width:200px; margin-top:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%;margin-left:10%">
+            <img src="images/thehindu.png" style="height:200px;width:200px; margin-right:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/newyork.jpg" style="height:200px;width:200px; margin-right:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/abc.png" style="height:200px;width:200px; margin-right:5%;margin-left:3%;">
+        </div>
+        <div class="image14" style="width:20%">
+            <img src="images/thetimes.png" style="height:200px;width:200px; margin-right:5%;margin-left:3%;">
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#working">
+            <div class="image15" style="margin-left: 15%">
+                <img src="images/question.png"
+                    style="height:70px;width:70px;background-color: gray;margin-top:5%;margin-left:10%">
+                <h3 style="color:white;margin-left:6%;">HOW IT WORKS</h3>
+            </div>
+        </a>
+
+        <a href="#supp">
+            <div class="image15" style="margin-left: 0%">
+                <img src="images/help.png"
+                    style="height:70px;width:70px;background-color: gray;margin-top:5%;margin-left:10%">
+                <h3 style="color:white;margin-left:6%;">HELP & SUPPORT</h3>
+            </div>
+        </a>
+
+
+    </div>
+    <div class="footer1">
+        <center>
+            <p style="color:aliceblue;""><b>CITIES</b></p>
+        </center>
+        <div class=" city">
+                <p>DELHI</p>
+                <p>BANGLORE</p>
+                <p>CHENNAI</p>
+                <p>AHMEDABAD</p>
+                <P>LUDHIANA</P>
+                <P>NAGPUR</P>
+    </div>
+    <div class="city">
+        <p>SURAT</p>
+        <p>TRIVANDRUM</p>
+        <p>TIRUPATI</p>
+        <p>MUMBAI</p>
+        <p>BANDRA</p>
+        <P>JAIPUR</P>
+
+    </div>
+    <div class="city">
+        <p>JODHPUR</p>
+        <p>UDAIPUR</p>
+        <p>PUNE</p>
+        <P>HYDERABAD</P>
+        <P>MANGLORE</P>
+        <P>VISHAKAPATNAM</P>
+    </div>
+    <div class="city">
+        <p>MANIPAL</p>
+        <P>GOA</P>
+        <P>SHIMLA</P>
+        <P>GUWAHATI</P>
+        <P>DEHRADUN</P>
+        <P>BHOPAL</P>
+    </div>
+    <hr>
+    <div class="touch">
+        <h2> Let's Keep In Touch </h2>
+        <p>Amity University ,Hostel no. 5 Kant kalwar,Rajasthan.</p>
+        <a class="red" href="https://instagram.com/paras0604?utm_source=ig_profile_share&igshid=17yivep5bfhh"><i
+                class="fab fa-instagram"></i></a>
+        <a class="book" href="https://www.facebook.com/paraskhatri0604"><i class="fab fa-facebook"></i></a>
+        <a class="inked" href="https://www.linkedin.com/in/paras-khatri-54215b154"><i class="fab fa-linkedin"></i></a>
+        <a class="googlemail" href="https://www.google.com/gmail"><i class="fas fa-mail-bulk"></i></a>
+    </div>
+    </div>
+
+    <div class="footer0">
+        <div style="border:1px solid gray">
+            <div class="support" id="supp">
+                <h1 style="color:black"> HELP & SUPPORT</h1>
+                <hr style="margin-right:5%;margin-left:0%">
+                <h2 style="color:gray">POPULAR QUERIES</h2>
+                <hr>
+                <p style="font-size: 20px;"><b>What Type Of Driver License Is Required?</b></p>
+                <p style="text-align:justify;">WHEELS 2 GO requires a valid Indian driver's license. It's critical that
+                    the license is an original. The License must be for a light motor vehicle (car). Members do NOT need
+                    a specific license that is associated with a yellow board plate.</p>
+                <p style="font-size:20px"><b>What Happens If I return Bike Late?</b></p>
+                <p style="text-align:justify;">a) Standard hourly fee will be applicable per hour of delay. Weekend or
+                    weekday delays will be charged accordingly.<br>
+                    b) Free KMs will be given at 10 km per hour of delay.<br>
+                    c) In addition to the standard hourly fee, every hour of delay would be charged at Rs. 300/hour</p>
+                <p style="font-size:20px"><b>Is There A Km Limit To How Much I Can Drive?</b></p>
+                <p style="text-align:justify;">Each reservation comes with 10 km/hr with a maximum daily driving limit
+                    of 240 km/day (24 hour period). For example, a 5 hour reservation would come with 50 km in driving
+                    at no additional charge while a 3 day reservation would come with 720 km in driving at no </p>
+                <p style="font-size:20px"><b>Can I Withdraw My Wallet Balance In My Bank Account?</b> </p>
+                <p style="text-align:justify;">Absolutely! You can withdraw your Wallet Cash balance into your bank
+                    account any time. Navigate to the 'My Bookings' page and click on the 'Withdraw' button. You will be
+                    redirected to the Wallet Cash page when you can login with your Wallet Cash credentials. There, you
+                    can enter your bank account details and withdraw your balance. It can take up to 1 business day for
+                    the amount to reflect in your account.</p>
+                <hr>
+            </div>
+            <hr>
+        </div>
+        <div class="support" style="padding-bottom: 50px">
+            <h2 style="color:gray">SELF DRIVE BIKES IN MUMBAI.</h2>
+            <p style="word-spacing: 2px; text-align: justify; font-size:18px;">The financial capital of India, Mumbai is
+                a city which
+                never sleeps. Buzzing with activity, it also holds the distinction of being the entertainment hub of the
+                country. With a beach in its backyard and the picturesque Western Ghats a stone’s throw away, the city
+                attracts visitors from all over the word. From the Gateway of India which opens the doors to India’s
+                mysteries, to the ancient caves of Elephanta Island, and from the iconic Stock Exchange to the many
+                studios where Bollywood movies are made, the city offers a multitude of sights and experiences.
+                The downside of life in Mumbai is the difficulty commuting poses. Overloaded public transport and
+                increasing distances add to the stress of living in Mumbai. Whether you are a visitor to this
+                melting-pot of cultures, or a resident of the city, it is important to have a self-drive bike at your
+                disposal to make the most of your time. If you do not plan to buy a bike of your own, WHEELS 2 GO offers
+                the
+                perfect solution by making the process of self-drive bike booking in Mumbai convenient and affordable.
+                The WHEELS 2 GO website allows you the freedom of booking a self drive bike at your fingertips.</p>
+            <h2 style="color:gray">BIKE ON RENT IN MUMBAI</h2>
+            <P style="word-spacing: 2px; text-align: justify; font-size:18px;">
+                On many occasions, working professionals and business persons want to commute to different parts of the
+                city in the same day. Usually, they hire a chauffeur driven bike and pay extra for the waiting charges.
+                This option, while popular, is also more expensive. It is more economical to opt for a self-drive bike
+                rental in Mumbai. You can spend any amount of time at a meeting without having to worry about the
+                waiting charges, and use the bike to explore Mumbai after work at your leisure. WHEELS 2 GO also
+                provides
+                Mumbai airport service, using which you can pick up one of our bikes right at the airport when you
+                land. We have a variety of self drive bikes in our fleet including luxury brands which makes it easier
+                to
+                book luxury self drive bikes on rent in Mumbai.
+
+            </P>
+            <H2 style="color:gray">BIKE RENTAL IN MUMBAI</H2>
+            <p style="word-spacing: 2px; text-align: justify; font-size:18px;">An ideal way to relax after a stressful
+                week at the office is to go on a long drive from Mumbai to Pune
+                or from Mumbai to Nasik. Enjoy the drive on the wide 6-lane Mumbai – Pune expressway with your loved
+                ones by taking a self drive bike on hire in Mumbai. There are many religious sites, parks, and museums
+                in
+                Nasik which makes it an ideal location to unwind.
+
+            </p>
+            <h2 style="color:gray">ABOUT WHEELS 2 GO</h2>
+            <P style="word-spacing: 2px; text-align: justify; font-size:18px;">No more worries about petrol mileage,
+                insurance, and bike
+                breakdowns! WHEELS 2 GO has enabled driving convenience for travellers around the country and is fast
+                expanding its reach to cities including Ahmedabad, Bangalore, Chandigarh, Chennai, Coimbatore,
+                Delhi-NCR, Hyderabad, Jaipur, Kochi, Kolkata, Ludhiana, Mangalore, Mumbai, Mysore, Pune, Siliguri,
+                Vizag, Nagpur, Udaipur, Vijayawada, Surat, Lucknow and Guwahati.
+                Self drive bikes from WHEELS 2 GO have given customers more control, privacy, and freedom. Book a self
+                drive
+                bike in any city you visit with the WHEELS 2 GO website on your phone and feel at home wherever you go.
+            </P>
+        </div>
+    </div>
+</body>
+
+</html>
