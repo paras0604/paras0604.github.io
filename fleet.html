@@ -170,18 +170,12 @@
         } */
     </style>
     <script>
-            function googlesignout(){
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider);
+            function logout(){
+                firebase.auth().signOut().then(function () {
+                        window.location.href = "signin.html";
+                    });
             }
-            firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                console.log("signed in")
-                window.location.href = "fleet.html";
-            } else {
-                console.log("Signed out..")
-            }
-        });
+       
         </script>
 </head>
 
@@ -191,7 +185,7 @@
             <a href="index.html" class="nav-info2">
                 <h1 style="float:left;">HOME</h1>
             </a>
-            <button onclick="googlesignout()" class="nav-info">LOGOUT</button>
+            <button onclick="logout()" class="nav-info">LOGOUT</button>
 
         </nav>
         <br><br><br><br><br><br>
