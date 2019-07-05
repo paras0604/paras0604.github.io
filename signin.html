@@ -3,10 +3,25 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bda1187927.js"></script>
     <title>LOGIN FORM</title>
     <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA4XTEmRk1NbZC_CcaramQvBHfvP6P4Wlc",
+            authDomain: "dwarf-ab412.firebaseapp.com",
+            databaseURL: "https://dwarf-ab412.firebaseio.com",
+            projectId: "dwarf-ab412",
+            storageBucket: "dwarf-ab412.appspot.com",
+            messagingSenderId: "415337183169"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
 </head>
 <style>
     /* style for our body */
@@ -26,7 +41,7 @@
         font-size: 20px;
         padding: 30px;
         font-weight: bolder;
-        height:120px;
+        height: 120px;
         border-top-right-radius: 3%;
         border-top-left-radius: 3%;
     }
@@ -37,8 +52,8 @@
         max-width: 90%;
         border-radius: 3%;
         margin-left: 10%;
-        margin-top:2%;
-        margin-right:10%;
+        margin-top: 2%;
+        margin-right: 10%;
     }
 
     /* change the style for the elements of the form*/
@@ -60,13 +75,23 @@
         border-top: 3px;
 
     }
+    .signgoogle{
+        height: 50px;
+        background-color: grey;
+        margin-bottom: 4%;
+        font-size: 20px;
+    }
+    .signgoogle:hover{
+        background-color: lightgray;
+        color: black;
+    }
 
     /* this styling change the style of login button*/
     .style2 {
         background: rgb(30, 161, 133);
         color: white;
         height: 50px;
-        width:100px;
+        width: 100px;
         border-radius: 25%;
         margin-left: 2%;
     }
@@ -159,6 +184,21 @@
         }
     }
 </script>
+<script>
+    function googlesignin(){
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+    }
+    firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log("signed in")
+        window.location.href = "fleet.html";
+    } else {
+        console.log("Signed out..")
+    }
+});
+</script>
+
 
 <body>
     <nav class="nav1">
@@ -175,7 +215,7 @@
                  of the form together -->
     <div class="divbg">
         <!-- This is  start tag for making form -->
-        <form >
+        <form>
 
 
             <!-- This division is only for the heading 
@@ -195,7 +235,7 @@
                 <label for="password">Password:</label>
                 <input type="password" placeholder="Enter your password" id="password" name="password" required>
                 <br>
-                
+
                 <br>
                 <br>
                 <div id="lower">
@@ -203,10 +243,13 @@
                     <input type="submit" class="style2" value="Login" onclick="check()">
                 </div>
                 <br>
-                
+
                 <p>If new user then <a href="signup.html" class="click">CLICK HERE!!!</a></p>
             </div>
         </form>
+        <center><button class="signgoogle" onclick="googlesignin()"><i class="fab fa-google" style="font-size:25px;color:rgb(2, 95, 56)"></i>
+
+            Login with Google</button></center>
     </div>
 
 </body>
