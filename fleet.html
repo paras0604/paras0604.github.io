@@ -8,7 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA4XTEmRk1NbZC_CcaramQvBHfvP6P4Wlc",
+            authDomain: "dwarf-ab412.firebaseapp.com",
+            databaseURL: "https://dwarf-ab412.firebaseio.com",
+            projectId: "dwarf-ab412",
+            storageBucket: "dwarf-ab412.appspot.com",
+            messagingSenderId: "415337183169"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <title>Fleet</title>
     <style>
         nav {
 
@@ -70,6 +83,14 @@
 
         
     </style>
+    <script>
+        function logout(){
+            firebase.auth().signOut().then(function () {
+                    window.location.href = "signin.html";
+                });
+        }
+   
+    </script>
 </head>
 
 <body style="background-color: lightgray; font-family: sans-serif">
