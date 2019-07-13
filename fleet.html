@@ -2,90 +2,27 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA4XTEmRk1NbZC_CcaramQvBHfvP6P4Wlc",
-            authDomain: "dwarf-ab412.firebaseapp.com",
-            databaseURL: "https://dwarf-ab412.firebaseio.com",
-            projectId: "dwarf-ab412",
-            storageBucket: "dwarf-ab412.appspot.com",
-            messagingSenderId: "415337183169"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <title>Fleet</title>
+    <title>Document</title>
     <style>
-        /* style for div of picturesblk1 */
-        .picturesblk1 div {
-            width: 22.4%;
-            display: inline-table;
-            margin: 1%;
-            text-align: center;
-        }
-
-        /* for blk1 img */
-        .picturesblk1 img {
-            width: 100% !important;
-        }
-
-        .picturesblk1 div p {
-            width: 95% !important;
-        }
-
-        .picturesblk1 div h3 {
-            font-weight: 100;
-            font-size: 21px;
-        }
-
-        /* for blk2 division part */
-        .picturesblk2 div {
-            width: 22.4%;
-            display: inline-table;
-            margin: 1%;
-            text-align: center;
-        }
-
-        .picturesblk2 img {
-            width: 100% !important;
-        }
-
-        /* for blk2 paragraph part */
-        .picturesblk2 div p {
-            width: 95% !important;
-        }
-
-        /* for blk2 h3 part */
-        .picturesblk2 div h3 {
-            font-weight: 100;
-            font-size: 21px;
-        }
-
-        .button {
-            float: left;
-            border-radius: 5px;
-            background-color: black;
-            color: cornsilk;
-        }
-
-        .button:hover {
-            background-color: gray;
-            color: whitesmoke;
-            cursor: pointer;
-        }
-
         nav {
 
             font-family: Arial;
             color: black;
 
         }
-
+        .button{
+            background-color: black;
+        }
+        .button:hover{
+            opacity: 0.85;
+            background-color: black;
+        }
         .nav-info {
             margin: 12px;
             display: block;
@@ -94,7 +31,7 @@
             background-color: black;
             margin-top: 13px;
             float: right;
-            font-size: 18px;
+            font-size: 20px;
             text-decoration-line: none;
             font-family: 'Akronim', cursive;
             letter-spacing: 1px;
@@ -130,364 +67,391 @@
             z-index: 3;
             float: right;
         }
-        @media only screen and (max-width: 770px) {
-            .picturesblk1 div {
-                width: 47% !important;
-                margin: 1% !important;
-            }
 
-            .picturesblk2 div {
-                width: 47% !important;
-                margin: 1% !important;
-            }
-        }
-
-        /* media query for screen size less than 400px */
-        @media only screen and (max-width: 420px) {
-            .picturesblk1 div {
-                width: 97% !important;
-                margin: 1% !important;
-            }
-
-            .picturesblk2 div {
-                width: 97% !important;
-                margin: 1% !important;
-            }
-
-        }
-
-        /* @media only screen and (max-width:1000px) {
-            .picturesblk1 div {
-                width: 46% !important;
-                margin: 1 !important;
-            }
-
-            .picturesblk2 div {
-                width: 46% !important;
-                margin: 1% !important;
-            }
-
-        } */
+        
     </style>
-    <script>
-            function googlesignout(){
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider);
-            }
-            firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                console.log("signed in")
-                window.location.href = "fleet.html";
-            } else {
-                console.log("Signed out..")
-            }
-        });
-        </script>
 </head>
 
-<body style="background-color: lightgray">
+<body style="background-color: lightgray; font-family: sans-serif">
     <main>
         <nav class="nav1">
             <a href="index.html" class="nav-info2">
                 <h1 style="float:left;">HOME</h1>
             </a>
-            <button onclick="googlesignout()" class="nav-info">LOGOUT</button>
+            <button onclick="logout()" class="nav-info">LOGOUT</button>
 
         </nav>
-        <br><br><br><br><br><br>
-        <!-- division for first four pictures of food -->
-        <div class="picturesblk1">
-            <div>
-                <img src="images/iron1200.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="IRON 1200" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px;">Rs. 2000
-                </x>
-
-                <h3><br />Harley Davidson IRON 1200</h3>
-                <p>
-                    Harley Davidson Iron 1200 is 1202 cc Engine bike.IT give mileage of 20kmpl.Best bike for show off in
-                    your friends.Book this bike and enjoy Your day.
-                    The price is for 1 hour. </p>
-            </div>
-            <div>
-                <img src="images/streetfighter.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="STREET FIGHTER" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs.2500</x>
-                <h3> <br />Harley Davidson Street Fighter</h3>
-                <p>
-                    Harley Davidson street fighter is 975 cc Engine bike.IT give mileage of 23kmpl.Best bike for your
-                    college days and to go with someone special. .Book this bike and enjoy Your day.
-                </p>
-                <p>The price is for 1 hour. </p>
-            </div>
-            <div>
-                <img src="images/streettriple.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="street triple" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1500
-                </x>
-                <h3><br />Triumph Street Triple</h3>
-                <p>
-                    Triumph Street Triple is 765 cc Engine bike.IT give mileage of 20kmpl.Best bike for solo trip.Book
-                    this bike and enjoy Your trip.
-                    The price is for 1 hour.
-                </p>
-                <p>
-                    What else?</p>
-            </div>
-            <div>
-                <img src="images/speedtwin.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Speed twin" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 2000
-                </x>
-                <h3><br />Triumph Speed Twin</h3>
-                <p>
-                    Triumph Speed Twin is 1200 cc Engine bike.IT give mileage of 19kmpl. Bike for a classic ride.Book
-                    this bike and enjoy Your day.
-                    The price is for 1 hour.</p>
-            </div>
-        </div>
-        <!-- division part of another four pictures of food -->
-        <div class="picturesblk2">
-            <div>
-                <img src="Images/rc200.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="RC 200" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />KTM RC 200</h3>
-                <p>
-                    KTM RC 200 is 200 cc Engine bike.IT will give you mileage of 30kmpl.The bike for a speed lover.Book
-                    this bike and enjoy Your day.
-                    The price is for 1 hour.</p>
-            </div>
-            <div>
-                <img src="images/rc290.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="RC 290" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 900</x>
-                <h3><br />KTM RC 290</h3>
-                <p>
-                    KTM RC 290 is 290 cc Engine bike.IT give mileage of 30kmpl.Best bike for a speed lover.Book this
-                    bike and enjoy Your day.
-                    The price is for 1 hour. </p>
-            </div>
-            <div>
-                <img src="images/scrambler.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="scrambler" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1350
-                </x>
-                <h3><br />Ducati Scrambler</h3>
-                <p>
-                        Ducati Scrambler is 803 cc Engine bike.IT give mileage of 25kmpl.Best bike for a lover of sound of the bike.Book this
-                        bike and enjoy Your day.
-                        The price is for 1 hour.</p>
+        <div class="row picturesblk1" style="margin-top: 6%;">
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/iron1200.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Harley Davidson Iron 1200</h5>
+                    <p class="card-text"> Harley Davidson Iron 1200 is 1202 cc Engine bike.IT give mileage of
+                        20kmpl.Best bike for show off in
+                        your friends.Book this bike and enjoy your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="IRON 1200" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: sans-serif;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 2000</x>
                 </div>
-            <div>
-                <img src="images/desertsled.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Desert sled" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1750
-                </x>
-                <h3><br />Ducati Desert Sled</h3>
-                <p>
-                        Ducati Desert Sled is 803 cc Engine bike.IT give mileage of 30kmpl.Best bike for a speed lover.Book this
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/streetfighter.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Harley Davidson Street Fighter</h5>
+                    <p class="card-text"> Harley Davidson street fighter is 975 cc Engine bike.IT give mileage of
+                        23kmpl.Best bike for your
+                        college days and to go with someone special.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="STREET FIGHTER" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs.2500</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/streettriple.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Triumph Street Triple</h5>
+                    <p class="card-text"> Triumph Street Triple is 765 cc Engine bike.IT give mileage of 20kmpl.Best
+                        bike for solo trip.Book
+                        this bike and enjoy Your trip.
+                        The price is for 1 hour.</p><br>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="street triple" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1500
+                    </x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/speedtwin.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Triumph Speed Twin</h5>
+                    <p class="card-text"> Triumph Speed Twin is 1200 cc Engine bike.IT give mileage of 19kmpl. Bike for
+                        a classic ride.Book
+                        this bike and enjoy Your day.
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Speed twin" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 2000
+                    </x>
+                </div>
+            </div>
+        </div>
+        <div class="row picturesblk2" style="margin-top: 3%">
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/rc200.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">KTM RC 200</h5>
+                    <p class="card-text">KTM RC 200 is 200 cc Engine bike.IT will give you mileage of 30kmpl.The bike
+                        for a speed lover.Book
+                        this bike and enjoy Your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="RC 200" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: sans-serif;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 750</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/rc290.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">KTM RC 290</h5>
+                    <p class="card-text"> KTM RC 290 is 290 cc Engine bike.IT give mileage of 30kmpl.Best bike for a
+                        speed lover.Book this
+                        bike and enjoy Your day.Go for it.
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="RC 290" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs.900</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/scrambler.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Ducati Scrambler</h5>
+                    <p class="card-text"> Ducati Scrambler is 803 cc Engine bike.IT give mileage of 25kmpl.Best bike for
+                        a lover of sound of the bike.Book this
                         bike and enjoy Your day.
                         The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="scrambler" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1350
+                    </x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/desertsled.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Ducati Desert Sled</h5>
+                    <p class="card-text"> Ducati Desert Sled is 803 cc Engine bike.IT give mileage of 30kmpl.Best bike
+                        for a speed lover.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Desert sled" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1750
+                    </x>
+                </div>
             </div>
 
-        </div>
-        <div class="picturesblk2">
-            <div>
-                <img src="Images/g310r.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="G 310 R" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1350</x>
-                <h3><br />BMW G 310 R</h3>
-                <p>
-                        BMW G310 R is 313CC Engine bike.IT give mileage of 35kmpl.Best bike for a speed lover.Book this
-                        bike and enjoy Your day.
-                        The price is for 1 hour.</p>
-            </div>
-            <div>
-                <img src="images/Rninet.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="R NINET racer" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1750
-                </x>
-                <h3><br />BMW R NINE T Racer</h3>
-                <p>
-                        BMW R NINE T RACER is 1170 cc Engine bike.IT give mileage of 35kmpl.Best bike for a speed lover.Book this
-                        bike and enjoy Your day.
-                        The price is for 1 hour.
-                </p>
-            </div>
-            <div>
-                <img src="images/Benelli302r.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="302 R" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1500
-                </x>
-                <h3><br />DSK Benelli 302 R</h3>
-                <p>
-                    DSK BENELLI 302 R is 300 cc engine cc bike.IT give mileage of 30kmpl.Best bike for a speed lover.Book this
-                    bike and enjoy Your day.
-                    The price is for 1 hour.</p>
-            </div>
-            <div>
-                <img src="images/TNT600.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="TNT 600 GT" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 2000
-                </x>
-                <h3><br />Benelli TNT 600 GT</h3>
-                <p>
-                        BENELLI TNT 600 GTT is 600 cc engine bike.It give mileage of 19kmpl.Best bike for a speed lover.Book this
-                        bike and enjoy Your day.
-                        The price is for 1 hour.</p>
-            </div>
 
         </div>
-        <div class="picturesblk2">
-            <div>
-                <img src="Images/classic350.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Classic 350" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />Royal Enfield Classic 350</h3>
-                <p>
-                       Royal Enfield Classic 350 is 350 cc Engine bike.IT give mileage of 25kmpl.Best bike for a speed lover.Book this
+        <div class="row picturesblk2" style="margin-top: 3%">
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/g310r.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">BMW G 310 R</h5>
+                    <p class="card-text">BMW G310 R is 313CC Engine bike.IT give mileage of 35kmpl.Best bike for a speed
+                        lover.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="G 310 R" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: sans-serif;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1350</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/Rninet.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">BMW R Nine T Racer</h5>
+                    <p class="card-text"> BMW R NINE T RACER is 1170 cc Engine bike.IT give mileage of 35kmpl.Best bike
+                        for a speed lover.Book this
                         bike and enjoy Your day.
                         The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="R NINET racer" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1750</x>
+                </div>
             </div>
-            <div>
-                <img src="images/himalayan.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Himalayan" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 1000</x>
-                <h3><br />Royal Enfield Himalayan</h3>
-                <p>
-                   Royal Enfield Himalayan is 411 CC Engine Bike.IT give mileage of 27kmpl.Best bike for a speed lover.Book this
-                   bike and enjoy Your day.
-                   The price is for 1 hour. 
-                </p>
-            </div>
-            <div>
-                <img src="images/cbr250r.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="CBR250R Honda" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />Honda CBR250R</h3>
-                <p>
-                    Honda CBR250 R is a 250 cc Engine Bike.IT give mileage of 40kmpl.Book this
-                    bike and enjoy Your day.
-                    The price is for 1 hour.</p>
-            </div>
-            <div>
-                <img src="images/CB300R.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="CB 300R Honda" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 950</x>
-                <h3><br />Honda CB 300R</h3>
-                <p>
-                       Honda CB 300R is a 300 cc Engine bike. IT give mileage of 38kmpl.The looks of this bike are amazing.Book this
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/Benelli302r.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">DSK Benelli 302 R</h5>
+                    <p class="card-text"> DSK BENELLI 302 R is 300 cc engine cc bike.IT give mileage of 30kmpl.Best bike
+                        for a speed lover.Book this
                         bike and enjoy Your day.
                         The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="302 R" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1500
+                    </x>
+                </div>
             </div>
-
-        </div>
-        <div class="picturesblk2">
-            <div>
-                <img src="Images/xpulse200t.jpg" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="X Pulse 200 T" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />Hero X Pulse 200 T</h3>
-                <p>
-                    Hero X Pulse 200 T is a 200 CC Engine Bike.IT give mileage of 45kmpl.Book this
-                    bike and enjoy Your day.
-                    The price is for 1 hour.</p>
-            </div>
-            <div>
-                <img src="images/Karizma.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Karizma ZMR" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 900</x>
-                <h3><br />Hero Karizma ZMR</h3>
-                <p>
-                        Hero Karizma ZMR is 350 CC Engine Bike.IT will give you the mileage of 28kmpl.Looks and speed of this bike are actually amazing.Book this
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/TNT600.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">DSK Benelli TNT 600 GT</h5>
+                    <p class="card-text"> BENELLI TNT 600 GTT is 600 cc engine bike.It give mileage of 19kmpl.Best bike
+                        for a speed lover.Book this
                         bike and enjoy Your day.
-                        The price is for 1 hour.
-                </p>
-            </div>
-            <div>
-                <img src="images/pulsar220f.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Pulsar 220 F" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />Bajaj Pulsar 220F</h3>
-                <p>
-                    Bajaj Pulsar 220 F is 220 CC Engine Bike.IT give mileage of 45kmpl.Best bike for a regional work.Book this
-                    bike and enjoy Your day.
-                    The price is for 1 hour. </p>
-            </div>
-            <div>
-                <img src="images/pulsar200.png" style="height:200px">
-                <form action="actionpage.html" method="GET">
-                    <input type="text" value="Pulsar 200" name="item" style="display:none">
-                    <input type="submit" value="Book Now" class="button">
-                </form>
-                <x style="font-family: Karma;vertical-align: top;font-weight:400;float:right;font-size:18px">Rs. 750</x>
-                <h3><br />Bajaj Pulsar 200</h3>
-                <p>
-                Bajaj Pulsar 200 is a 200 cc engine Bike. IT give mileage of 50kmpl.Book this
-                bike and enjoy Your day.
-                The price is for 1 hour.
-                </p>
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="TNT 600 GT" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 2000
+                    </x>
+                </div>
             </div>
 
+
         </div>
+        <div class="row picturesblk2" style="margin-top: 3%">
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/classic350.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Royal ENfield Classic 350</h5>
+                    <p class="card-text">Royal Enfield Classic 350 is 350 cc Engine bike.IT give mileage of 25kmpl.Best
+                        bike for a speed lover.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Classic 350" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: sans-serif;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 750</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/himalayan.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Royal Enfield Himalayan</h5>
+                    <p class="card-text"> Royal Enfield Himalayan is 411 CC Engine Bike.IT give mileage of 27kmpl.Best
+                        bike for a speed lover.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Himalayan" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 1000</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/cbr250r.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Honda CBR250 R</h5>
+                    <p class="card-text"> Honda CBR250 R is a 250 cc Engine Bike.IT give mileage of 40kmpl.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour.</p><br>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="CBR250R Honda" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 750
+                    </x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/CB300R.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Honda CB300 R</h5>
+                    <p class="card-text"> Honda CB 300R is a 300 cc Engine bike. IT give mileage of 38kmpl.The looks of
+                        this bike are amazing.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="CB 300R Honda" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 950
+                    </x>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row picturesblk2" style="margin-top: 3%">
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/xpulse200t.jpg" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Hero X Pulse 200 T</h5>
+                    <p class="card-text">Hero X Pulse 200 T is a 200 CC Engine Bike.IT give mileage of 45kmpl.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="X Pulse 200 T" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: sans-serif;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 750</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/Karizma.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Hero Karizma ZMR</h5>
+                    <p class="card-text"> Hero Karizma ZMR is 350 CC Engine Bike.IT will give you the mileage of
+                        28kmpl.speed of this bike is actually amazing.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Karizma ZMR" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 900</x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/pulsar220f.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Bajaj Pulsar 220 F</h5>
+                    <p class="card-text"> Bajaj Pulsar 220 F is 220 CC Engine Bike.IT give mileage of 45kmpl.Best bike
+                        for a regional work.
+                        The price is for 1 hour. </p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Pulsar 220 F" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 750
+                    </x>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-3 col-md-6">
+                <img src="images/pulsar200.png" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h5 class="card-title">Bajaj Pulsar 200</h5>
+                    <p class="card-text"> Bajaj Pulsar 200 is a 200 cc engine Bike. IT give mileage of 50kmpl.Book this
+                        bike and enjoy Your day.
+                        The price is for 1 hour.</p>
+                    <form action="actionpage.html" method="GET">
+                        <input type="text" value="Pulsar 200" name="item" style="display:none">
+                        <input type="submit" value="Book Now" class="button btn btn-primary">
+                    </form>
+                    <x
+                        style="font-family: Karma;vertical-align: top;font-weight:550;float:right;font-size:18px;margin-top: -10%">
+                        Rs. 950
+                    </x>
+                </div>
+            </div>
+
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
